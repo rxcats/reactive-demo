@@ -1,0 +1,33 @@
+# get
+GET http://localhost:8080/characters/5bc6ad5fcbffcb1268fc0527
+
+###
+
+
+# get all
+GET http://localhost:8080/characters
+
+###
+
+
+# edit
+PUT http://localhost:8080/characters/5bc6ad5fcbffcb1268fc0527
+
+{
+    "name":"누구냐",
+    "image":"",
+    "data":null
+}
+
+###
+
+# edit fail
+PUT http://localhost:8080/characters/1111
+
+{
+    "name":"누구냐",
+    "image":"",
+    "data":null
+}
+
+###
