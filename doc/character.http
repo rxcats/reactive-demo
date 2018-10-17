@@ -1,17 +1,20 @@
 # get
 GET http://localhost:8080/characters/5bc6ad5fcbffcb1268fc0527
+Content-Type: application/json
 
 ###
 
 
 # get all
 GET http://localhost:8080/characters
+Content-Type: application/json
 
 ###
 
 
 # edit
 PUT http://localhost:8080/characters/5bc6ad5fcbffcb1268fc0527
+Content-Type: application/json
 
 {
     "name":"누구냐",
@@ -21,8 +24,23 @@ PUT http://localhost:8080/characters/5bc6ad5fcbffcb1268fc0527
 
 ###
 
+
+# add
+POST http://localhost:8080/characters
+Content-Type: application/json
+
+{
+    "name":"누구냐#3",
+    "image":"",
+    "data":null
+}
+
+###
+
+
 # edit fail
 PUT http://localhost:8080/characters/1111
+Content-Type: application/json
 
 {
     "name":"누구냐",

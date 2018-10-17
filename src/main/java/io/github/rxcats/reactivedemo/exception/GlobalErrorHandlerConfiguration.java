@@ -44,6 +44,7 @@ public class GlobalErrorHandlerConfiguration extends AbstractErrorWebExceptionHa
 
     private Mono<ServerResponse> renderErrorResponse(ServerRequest request) {
         Map<String, Object> errorPropertiesMap = getErrorAttributes(request, true);
+        log.error("error:{}", errorPropertiesMap);
         return ServerResponse.status(HttpStatus.INTERNAL_SERVER_ERROR)
             .contentType(MediaType.APPLICATION_JSON_UTF8)
             .body(BodyInserters.fromObject(ResponseEntity.of(ResultCode.error, null).details((String) errorPropertiesMap.get("trace"))));
