@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 
+import io.github.rxcats.reactivedemo.config.Constants;
+import io.github.rxcats.reactivedemo.message.AesReqRes;
 import reactor.core.publisher.Mono;
 
 @Slf4j
-@RequestMapping(consumes = "application/vnd.rxcats.api", produces = "application/vnd.rxcats.api")
+@RequestMapping(consumes = Constants.RXCATS_API_MEDIA_TYPE_VALUE, produces = Constants.RXCATS_API_MEDIA_TYPE_VALUE)
 @RestController
 public class AesTestController {
 
     @PostMapping("/hello")
-    public Mono<SomeType> hello(@RequestBody SomeType someType) {
-        log.info("controller:{}", someType);
-        return Mono.just(someType);
+    public Mono<AesReqRes> hello(@RequestBody AesReqRes req) {
+        log.info("request:{}", req);
+        return Mono.just(req);
     }
 
 }

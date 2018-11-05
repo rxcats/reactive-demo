@@ -1,4 +1,4 @@
-package io.github.rxcats.reactivedemo.config;
+package io.github.rxcats.reactivedemo.mvc;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+import io.github.rxcats.reactivedemo.config.Constants;
 import reactor.core.publisher.Mono;
 
 @Slf4j
@@ -33,7 +34,7 @@ public class AesWriter implements HttpMessageWriter<Object> {
 
     @Override
     public List<MediaType> getWritableMediaTypes() {
-        return List.of(MediaType.valueOf("application/vnd.rxcats.api"));
+        return List.of(Constants.RXCATS_API_MEDIA_TYPE);
     }
 
     @Override

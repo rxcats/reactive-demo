@@ -1,4 +1,4 @@
-package io.github.rxcats.reactivedemo.config;
+package io.github.rxcats.reactivedemo.mvc;
 
 import static org.springframework.core.io.buffer.DataBufferUtils.join;
 
@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+import io.github.rxcats.reactivedemo.config.Constants;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -32,7 +33,7 @@ public class AesReader implements HttpMessageReader<Object> {
 
     @Override
     public List<MediaType> getReadableMediaTypes() {
-        return List.of(MediaType.valueOf("application/vnd.rxcats.api"));
+        return List.of(Constants.RXCATS_API_MEDIA_TYPE);
     }
 
     @Override

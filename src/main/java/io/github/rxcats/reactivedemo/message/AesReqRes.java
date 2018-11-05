@@ -1,4 +1,4 @@
-package io.github.rxcats.reactivedemo.controller;
+package io.github.rxcats.reactivedemo.message;
 
 import lombok.Data;
 
