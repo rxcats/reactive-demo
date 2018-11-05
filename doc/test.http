@@ -1,0 +1,9 @@
+POST http://localhost:8080/hello
+Content-Type: application/vnd.rxcats.api
+
+{
+  "id":"id",
+  "value":"value"
+}
+
+###
